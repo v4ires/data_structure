@@ -40,10 +40,11 @@ void insereHashEncadeado(hash *h, int pos, chave x){
 }
 
 void removerHashEncadeado(hash *h, int pos, chave x){
+    no *aux = h->inicio[pos];
     if(h->inicio[pos]->k.valor == x.valor){
         h->inicio[pos] = h->inicio[pos]->prox;
+        free(aux);
     }else{
-        no *aux = h->inicio[pos];
         no *buffer = NULL;
         while(aux->prox != NULL && aux->prox->k.valor != x.valor)
             aux = aux->prox;
