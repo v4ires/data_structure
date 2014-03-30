@@ -41,22 +41,26 @@ void insereHashEncadeado(hash *h, int pos, chave x){
 
 void removerHashEncadeado(hash *h, int pos, chave x){
     no *aux = h->inicio[pos];
-    if(h->inicio[pos]->k.valor == x.valor){
-        h->inicio[pos] = h->inicio[pos]->prox;
-        free(aux);
+    if(h->inicio[pos] != NULL){
+         if(h->inicio[pos]->k.valor == x.valor){
+            h->inicio[pos] = h->inicio[pos]->prox;
+            free(aux);
+        }else{
+            no *buffer = NULL;
+            while(aux->prox != NULL && aux->prox->k.valor != x.valor)
+                aux = aux->prox;
+            if(aux->prox != NULL){
+                buffer = aux->prox;
+                if(aux->prox->prox == NULL)
+                    aux->prox = NULL;
+                else
+                    aux->prox = aux->prox->prox;
+                free(buffer);
+            }else
+                printf("Nao Achei!\n");
+        }   
     }else{
-        no *buffer = NULL;
-        while(aux->prox != NULL && aux->prox->k.valor != x.valor)
-            aux = aux->prox;
-        if(aux->prox != NULL){
-            buffer = aux->prox;
-            if(aux->prox->prox == NULL)
-                aux->prox = NULL;
-            else
-                aux->prox = aux->prox->prox;
-            free(buffer);
-        }else
-            printf("Nao Achei!\n");
+        printf("Elemento nao encontrado!\n");
     }
 }
 
