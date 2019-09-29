@@ -1,34 +1,22 @@
-/**********************************************************************************************
-** Os códigos aqui implementados são implementações das Estrutura de Dados implementados
-** durante as disciplinas de Estrutura de Dados I, Estrutura de Dados II e na Monitoria onde
-** implementei alguns desses códigos em conjunto com os alunos durante o ano de 2013 e inicio
-** de 2014. 
-**
-** Desenvolvido por:
-**                   Vinicius Aires Barros
-**
-** Contato: Vinícius Aires Barros (viniciusaires7@gmail.com)
-***********************************************************************************************/
-
 #include "avl.c"
 
 int main(){
 
     node *n = NULL;
 
-    ///Rotação Dupla à Direita OK
+    ///Rotaï¿½ï¿½o Dupla ï¿½ Direita OK
     ///ENTRADA {25,10,5,20,30,27,28}
     ///SAIDA {25,10,5,20,28,27,30}
 
-    ///Rotação Dupla á Esquerda OK
+    ///Rotaï¿½ï¿½o Dupla ï¿½ Esquerda OK
     ///ENTRADA {10,5,20,30,25}
     ///Saida {10,5,25,20,30}
 
-    ///Rotação Simples para a Direita OK
+    ///Rotaï¿½ï¿½o Simples para a Direita OK
     ///ENTRADA {25,10,5,20,30,28,27}
     ///Saida {25,10,5,20,28,27,30}
 
-    ///Rotação Simples para a Esquerda OK
+    ///Rotaï¿½ï¿½o Simples para a Esquerda OK
     ///ENTRADA {10,20,30,40,50}
     ///Saida {20,10,40,30,50}
 

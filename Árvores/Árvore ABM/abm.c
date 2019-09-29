@@ -1,19 +1,7 @@
-/**********************************************************************************************
-** Os códigos aqui implementados são implementações das Estrutura de Dados implementados
-** durante as disciplinas de Estrutura de Dados I, Estrutura de Dados II e na Monitoria onde
-** implementei alguns desses códigos em conjunto com os alunos durante o ano de 2013 e inicio
-** de 2014. 
-**
-** Desenvolvido por:
-**                   Vinicius Aires Barros
-**
-** Contato: Vinícius Aires Barros (viniciusaires7@gmail.com)
-***********************************************************************************************/
-
 #include "abm.h"
 
 /**
-*Retorna um novo nó alocado
+*Retorna um novo nï¿½ alocado
 */
 node *criarNode(){
     node *n = (node*)malloc(sizeof(node));
@@ -33,7 +21,7 @@ node *criarNode(){
 }
 
 /**
-*Método de ordenação Bubble Sort
+*Mï¿½todo de ordenaï¿½ï¿½o Bubble Sort
 */
 void bubbleSort(node **n){
     key temp;
@@ -59,7 +47,7 @@ bool jaExiste(node *n, int valor){
 }
 
 /**
-*Insere uma nova chave na Árvore
+*Insere uma nova chave na ï¿½rvore
 */
 void inserirABM(node **n,int valor) {
     int i;
@@ -91,7 +79,7 @@ void inserirABM(node **n,int valor) {
 
 /**
 *Retorna o indice da chave que contem o valor
-*informação nescessaria para realizar a busca
+*informaï¿½ï¿½o nescessaria para realizar a busca
 *na funcao buscaABM()
 */
 int buscaNo(node *n, int valor){
@@ -152,8 +140,8 @@ key maiorValor(node **n){
 }
 
 /**
-*Recebe o nó que contem o valor e reordena os
-*valores apartir da posição
+*Recebe o nï¿½ que contem o valor e reordena os
+*valores apartir da posiï¿½ï¿½o
 */
 void removeKey(node **n, int valor){
     int i = buscaNo((*n), valor);
@@ -175,7 +163,7 @@ void removerABM(node **n,int valor) {
     } else {
         int aux = buscaNo((*n), valor);
         if(valor == (*n)->chaves[aux].info) {
-            ///Se a chave estiver no Nó Folha
+            ///Se a chave estiver no Nï¿½ Folha
             if((*n)->chaves[0].ramoMenor == NULL && (*n)->chaves[1].ramoMenor == NULL && (*n)->chaves[2].ramoMenor == NULL && (*n)->maior == NULL){
                 if((*n)->tamanho == 1){
                     node *aux = (*n);
@@ -185,7 +173,7 @@ void removerABM(node **n,int valor) {
                     removeKey(&(*n), valor);
             }
             else {
-                ///Se a chave estiver em qualquer outro Nó Não Follha
+                ///Se a chave estiver em qualquer outro Nï¿½ Nï¿½o Follha
                 if(aux < ((*n)->tamanho-1))
                     (*n)->chaves[aux].info = maiorValor(&(*n)->chaves[aux].ramoMenor).info;
                 else
@@ -216,7 +204,7 @@ void printASC(node *n){
 }
 
 /**
-*Imprime em Ordem de Inserção
+*Imprime em Ordem de Inserï¿½ï¿½o
 */
 void printABM(node *n){
     if(n == NULL)
@@ -235,7 +223,7 @@ void printABM(node *n){
 }
 
 /**
-*TODO Fazer uma função que Destrua
+*TODO Fazer uma funï¿½ï¿½o que Destrua
 *a arvore ABM
 */
 void zerarABM(node **n){
